@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { getPokemon } from '../../apiCalls';
+import Pokemon from '../Pokemon/Pokemon';
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([])
@@ -26,7 +27,7 @@ function App() {
     <div>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
-      <Pokemon />
+      <Pokemon pokemon={allPokemon}/>
     </div>
   );
 }
