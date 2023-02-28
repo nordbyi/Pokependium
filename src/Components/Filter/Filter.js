@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Filter = () => {
+const Filter = ({passFilter}) => {
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    passFilter(inputValue)
+  }, [inputValue])
 
   return (
     <div>
