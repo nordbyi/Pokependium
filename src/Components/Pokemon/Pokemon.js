@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 const Pokemon = ({ pokemon }) => {
   const displayPokemon = pokemon.map((poke) => {
     return (
-      <Link>
-        <img
-          src={poke.sprites.other["official-artwork"]["front_default"]}
-        ></img>
+      <Link key={poke.id}>
+        <img src={poke.sprites.other["official-artwork"]["front_default"]} />
       </Link>
     );
   });
-// flex div 
+  // flex div
   return <div>{displayPokemon}</div>;
 };
 
