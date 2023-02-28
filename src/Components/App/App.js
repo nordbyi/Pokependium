@@ -29,7 +29,7 @@ function App() {
     <div>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
-      <Filter />
+      <Filter passFilter={setFilterQuery}/>
       <Pokemon pokemon={allPokemon}/>
     </div>
   );
