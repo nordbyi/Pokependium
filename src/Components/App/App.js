@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [filterQuery, setFilterQuery] = useState('')
+  const [filteredPokemon, setFilteredPokemon] = useState('')
 
 
   useEffect(() => {
