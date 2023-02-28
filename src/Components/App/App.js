@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { getPokemon } from '../../apiCalls';
 import Pokemon from '../Pokemon/Pokemon';
+import Filter from '../Filter/Filter';
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [filterQuery, setFilterQuery] = useState('')
 
 
   useEffect(() => {
@@ -27,6 +29,7 @@ function App() {
     <div>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
+      <Filter />
       <Pokemon pokemon={allPokemon}/>
     </div>
   );
