@@ -37,7 +37,10 @@ function App() {
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
       <Filter passFilter={setFilterQuery} />
-      <Pokemon pokemon={filteredPokemon} />
+      <React.Fragment>
+        <Route exact path='/'render={() => <Pokemon pokemon={filteredPokemon}/>}/>
+      </React.Fragment>
+      {/* <Pokemon pokemon={filteredPokemon} /> */}
     </div>
   );
 }
