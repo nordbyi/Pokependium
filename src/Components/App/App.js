@@ -4,6 +4,7 @@ import { getPokemon } from "../../apiCalls";
 import Pokemon from "../Pokemon/Pokemon";
 import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
+import Nav from "../Nav/Nav";
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
