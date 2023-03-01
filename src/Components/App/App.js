@@ -37,12 +37,18 @@ function App() {
     <div>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
-      <Filter passFilter={setFilterQuery} />
       <React.Fragment>
         <Route
           exact
           path="/"
-          render={() => <Pokemon pokemon={filteredPokemon} />}
+          render={() => {
+            return (
+              <>
+                <Filter passFilter={setFilterQuery} />
+                <Pokemon pokemon={filteredPokemon} />;
+              </>
+            );
+          }}
         />
         <Route
           exact
@@ -56,7 +62,12 @@ function App() {
               );
               return matches.length;
             });
-            return <Pokemon pokemon={matchingPokes} />;
+            return (
+              <>
+                <Filter passFilter={setFilterQuery} />
+                <Pokemon pokemon={matchingPokes} />
+              </>
+            );
           }}
         />
         <Route
@@ -66,11 +77,10 @@ function App() {
             const matchingPokemon = allPokemon.find(
               (poke) => poke.id === +match.params.id
             );
-            //return pokedetails page with matchingPokemon passed in
+            return <PokeDetails poke={matchingPokemon} />;
           }}
         />
       </React.Fragment>
-      {/* <Pokemon pokemon={filteredPokemon} /> */}
     </div>
   );
 }
