@@ -38,7 +38,25 @@ function App() {
       {error && <p>{error}</p>}
       <Filter passFilter={setFilterQuery} />
       <React.Fragment>
-        <Route exact path='/'render={() => <Pokemon pokemon={filteredPokemon}/>}/>
+        <Route
+          exact
+          path="/"
+          render={() => <Pokemon pokemon={filteredPokemon} />}
+        />
+        <Route
+          exact
+          path="/:types"
+          render={({ match }) => {
+            const types = match.params.types.split("+");
+            console.log(types);
+            const matchingPokes = filteredPokemon.filter((poke) => {
+              const matches = poke.types.filter((type) => types.includes(type.type.name))
+              return matches.length
+            }
+            );
+            return <Pokemon pokemon={matchingPokes} />;
+          }}
+        />
       </React.Fragment>
       {/* <Pokemon pokemon={filteredPokemon} /> */}
     </div>
