@@ -11,4 +11,10 @@ const getPokemon = async () => {
   return AllPokemon;
 };
 
-export { getPokemon };
+const getPokeInfo = async (id) => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+  const info = await response.json()
+  return info
+}
+
+export { getPokemon, getPokeInfo };
