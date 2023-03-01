@@ -1,7 +1,5 @@
 const getPokemon = async () => {
-  const InitialFetch = await fetch(
-    "http://pokeapi.co/api/v2/pokemon/?limit=251"
-  );
+  const InitialFetch = await fetch("http://pokeapi.co/api/v2/pokemon/?limit=5");
   const pokemonList = await InitialFetch.json();
   const AllPokemon = await Promise.all(
     pokemonList.results.map(async (poke) => {
@@ -10,7 +8,7 @@ const getPokemon = async () => {
     })
   );
   console.log(AllPokemon);
-  return AllPokemon
+  return AllPokemon;
 };
 
-export { getPokemon }
+export { getPokemon };
