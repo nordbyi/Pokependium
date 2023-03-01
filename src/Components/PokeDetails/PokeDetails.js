@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PokemonStats from "../PokeStats/Pokestats";
 import { getPokeInfo } from "../../apiCalls";
+import './PokeDetails.css'
 
 const PokeDetails = ({ poke }) => {
   const [loading, setLoading] = useState(false);
@@ -25,6 +26,9 @@ const PokeDetails = ({ poke }) => {
 
   if (!poke) return;
 
+  const capFirstLetter = poke.name.charAt(0).toUpperCase();
+  const capitalizedName = capFirstLetter + poke.name.slice(1);
+
   const flavorText = (arr) => {
     return [
       ...new Set(
@@ -42,6 +46,7 @@ const PokeDetails = ({ poke }) => {
       {!loading && (
         <div>
           <img src={poke.sprites.other["official-artwork"]["front_default"]} />
+          {capitalizedName}
           <PokemonStats pokemon={poke} />
           {flavorText(pokeInfo)}
         </div>
