@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import { getPokemon } from "../../apiCalls";
 import Pokemon from "../Pokemon/Pokemon";
+import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 
 function App() {
@@ -58,10 +59,16 @@ function App() {
             return <Pokemon pokemon={matchingPokes} />;
           }}
         />
-        <Route exact path="/:types/:id" render={({match}) => {
-          const matchingPokemon = allPokemon.find(poke => poke.id === +match.params.id)
-          //return pokedetails page with matchingPokemon passed in
-       }}/>
+        <Route
+          exact
+          path="/:types/:id"
+          render={({ match }) => {
+            const matchingPokemon = allPokemon.find(
+              (poke) => poke.id === +match.params.id
+            );
+            //return pokedetails page with matchingPokemon passed in
+          }}
+        />
       </React.Fragment>
       {/* <Pokemon pokemon={filteredPokemon} /> */}
     </div>
