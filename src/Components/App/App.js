@@ -50,13 +50,18 @@ function App() {
             const types = match.params.types.split("+");
             console.log(types);
             const matchingPokes = filteredPokemon.filter((poke) => {
-              const matches = poke.types.filter((type) => types.includes(type.type.name))
-              return matches.length
-            }
-            );
+              const matches = poke.types.filter((type) =>
+                types.includes(type.type.name)
+              );
+              return matches.length;
+            });
             return <Pokemon pokemon={matchingPokes} />;
           }}
         />
+        <Route exact path="/:types/:id" render={({match}) => {
+          const matchingPokemon = allPokemon.find(poke => poke.id === +match.params.id)
+          //return pokedetails page with matchingPokemon passed in
+       }}/>
       </React.Fragment>
       {/* <Pokemon pokemon={filteredPokemon} /> */}
     </div>
