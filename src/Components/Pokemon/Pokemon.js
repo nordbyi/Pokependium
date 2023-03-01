@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import './pokemon.css'
 
 const Pokemon = ({ pokemon }) => {
+  if(!pokemon.length) {
+    return <p>No Pokemon with that name</p>
+  }
   const displayPokemon = pokemon.map((poke) => {
     const path = `${poke.types.map(type => type.type.name).join('+')}/${poke.id}`
     return (
@@ -11,7 +14,7 @@ const Pokemon = ({ pokemon }) => {
       </Link>
     );
   });
-  return <div className='container'>{displayPokemon}</div>;
+  return <div className='container'>{displayPokemon}</div>
 };
 
 export default Pokemon;
