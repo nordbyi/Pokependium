@@ -10,11 +10,11 @@ const PokeDetails = ({ poke }) => {
   useEffect(() => {
     const fetchPokemonInfo = async () => {
       setLoading(true);
-      setError('')
+      setError("");
       try {
         const data = await getPokeInfo(poke.id);
         console.log(data);
-        setPokeInfo(data['flavor_text_entries']);
+        setPokeInfo(data["flavor_text_entries"]);
       } catch {
         setError("Failed to Fetch Pokemon Info");
       }
@@ -23,8 +23,17 @@ const PokeDetails = ({ poke }) => {
     fetchPokemonInfo();
   }, [poke]);
 
+  if (!poke) return;
 
-  if(!poke) return
+  const flavorText = (arr) => {
+    return [
+      ...new Set(
+        arr
+          .filter((el) => el.language.name === "en")
+          .map((el) => `${el.version.name}: ${el.flavor_text}`)
+      ),
+    ].map((el) => <p>{el}</p>);
+  };
 
   return (
     <div>
@@ -34,6 +43,7 @@ const PokeDetails = ({ poke }) => {
         <div>
           <img src={poke.sprites.other["official-artwork"]["front_default"]} />
           <PokemonStats pokemon={poke} />
+          {flavorText(pokeInfo)}
         </div>
       )}
     </div>
