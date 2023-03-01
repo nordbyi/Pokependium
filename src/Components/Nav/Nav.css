@@ -1,0 +1,33 @@
+.nav {
+  background-color: deepskyblue;
+  font-size: 1.3em;
+}
+
+.types {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.type {
+  width: 10%;
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  padding: 0.5vh;
+  transition: 0.7s;
+  font-family: sans-serif;
+}
+
+a.active {
+  color: deepskyblue;
+  background-color: aliceblue;
+  transition: 0.7s;
+}
