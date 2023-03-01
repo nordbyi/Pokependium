@@ -1,5 +1,15 @@
 import React from "react";
 
-const Nav = () => {}
+const Nav = ({ pokemon }) => {
+  if(!pokemon) return
 
-export default Nav
+  const types = [
+    ...new Set(
+      pokemon.flatMap((poke) => poke.types.map((type) => type.type.name))
+    ),
+  ];
+
+  
+};
+
+export default Nav;
