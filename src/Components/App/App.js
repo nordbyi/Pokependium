@@ -45,7 +45,7 @@ function App() {
             return (
               <>
                 <Filter passFilter={setFilterQuery} />
-                <Pokemon pokemon={filteredPokemon} />;
+                <Pokemon pokemon={filteredPokemon} />
               </>
             );
           }}
@@ -55,12 +55,14 @@ function App() {
           path="/:types"
           render={({ match }) => {
             const types = match.params.types.split("+");
-            console.log(types);
             const matchingPokes = filteredPokemon.filter((poke) => {
-              const matches = poke.types.filter((type) =>
-                types.includes(type.type.name)
-              );
-              return matches.length;
+              // const matches = poke.types.filter((type) =>
+              //   types.includes(type.type.name)
+              // );
+              // return matches.length;
+              const typeNames = poke.types.map(type => type.type.name)
+              // console.log(types.every(type => typeNames.includes(type)))
+              return types.every(type => typeNames.includes(type))
             });
             return (
               <>
