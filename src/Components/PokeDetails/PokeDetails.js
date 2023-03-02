@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PokemonStats from "../PokeStats/Pokestats";
 import { getPokeInfo } from "../../apiCalls";
-import './PokeDetails.css'
+import "./PokeDetails.css";
 
 const PokeDetails = ({ poke }) => {
   const [loading, setLoading] = useState(false);
@@ -30,13 +30,11 @@ const PokeDetails = ({ poke }) => {
   const capitalizedName = capFirstLetter + poke.name.slice(1);
 
   const flavorText = (arr) => {
-    return [
-      ...new Set(
-        arr
-          .filter((el) => el.language.name === "en")
-          .map((el) => `${el.version.name}: ${el.flavor_text}`)
-      ),
-    ].map((el) => <p>{el}</p>);
+    return arr
+      .filter((el) => el.language.name === "en")
+      .map((el) => <p><strong>{el.version.name.split('-').join(' ')}: </strong>{el.flavor_text}</p>)
+      // .map((el) => `${el.version.name}: ${el.flavor_text}`)
+      // .map((el) => <p>{el}</p>);
   };
 
   return (
@@ -44,11 +42,16 @@ const PokeDetails = ({ poke }) => {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {!loading && (
-        <div>
-          <img src={poke.sprites.other["official-artwork"]["front_default"]} />
-          {capitalizedName}
+        <div className="details-container">
+          <div className="img-name">
+            <img
+              className="details-img"
+              src={poke.sprites.other["official-artwork"]["front_default"]}
+            />
+            <p>{capitalizedName}</p>
+          </div>
           <PokemonStats pokemon={poke} />
-          {flavorText(pokeInfo)}
+          <div className="flavor">{flavorText(pokeInfo)}</div>
         </div>
       )}
     </div>
