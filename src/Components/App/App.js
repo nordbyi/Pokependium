@@ -38,6 +38,7 @@ function App() {
     <div>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
+      <Nav pokemon={allPokemon}/>
       <React.Fragment>
         <Route
           exact
