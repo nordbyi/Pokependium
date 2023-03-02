@@ -32,7 +32,7 @@ const PokeDetails = ({ poke }) => {
   const flavorText = (arr) => {
     return arr
       .filter((el) => el.language.name === "en")
-      .map((el) => <p><strong>{el.version.name.split('-').join(' ')}: </strong>{el.flavor_text}</p>)
+      .map((el) => <p><strong>{el.version.name.split('-').join(' ')}: </strong>{el.flavor_text.replaceAll('\n', '')}</p>)
       // .map((el) => `${el.version.name}: ${el.flavor_text}`)
       // .map((el) => <p>{el}</p>);
   };
@@ -48,10 +48,10 @@ const PokeDetails = ({ poke }) => {
               className="details-img"
               src={poke.sprites.other["official-artwork"]["front_default"]}
             />
-            <p>{capitalizedName}</p>
+            <h2>{capitalizedName}</h2>
           </div>
           <PokemonStats pokemon={poke} />
-          <div className="flavor">{flavorText(pokeInfo)}</div>
+          <div className="flavor"><h2>Pokédex Entries</h2>{flavorText(pokeInfo)}</div>
         </div>
       )}
     </div>
