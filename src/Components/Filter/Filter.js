@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
+import './Filter.css'
 
-const Filter = ({passFilter}) => {
+const Filter = ({ passFilter }) => {
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    passFilter(inputValue)
-  }, [inputValue])
+    passFilter(inputValue);
+  }, [inputValue]);
 
   return (
-    <div>
+    <div className="input-container">
       <input
+        className="input"
         name="filterInput"
         placeholder="Filter Pokemon by Name"
         value={inputValue}
