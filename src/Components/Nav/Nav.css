@@ -18,7 +18,12 @@
 .type {
   width: 10%;
   color: aliceblue;
-  border-radius: 10px;
+  border-bottom: 5px solid transparent;
+  transition: .6s;
+}
+
+.type:hover {
+  border-bottom: 5px solid aliceblue;
 }
 
 a {
@@ -32,6 +37,7 @@ a {
 }
 
 a.active {
+  border-radius: 10px;
   color: deepskyblue;
   background-color: aliceblue;
   transition: 0.7s;
