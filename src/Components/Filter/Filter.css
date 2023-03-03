@@ -11,11 +11,8 @@
   transition: 0.6s 
 }
 
-
-
 .input:focus::placeholder {
   color: aliceblue;
-  /* transition: .6s; */
 }
 
 .input:hover {

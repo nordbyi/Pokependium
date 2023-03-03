@@ -33,8 +33,6 @@ const PokeDetails = ({ poke }) => {
     return arr
       .filter((el) => el.language.name === "en")
       .map((el) => <p><strong>{el.version.name.split('-').join(' ')}: </strong>{el.flavor_text.replaceAll('\n', '')}</p>)
-      // .map((el) => `${el.version.name}: ${el.flavor_text}`)
-      // .map((el) => <p>{el}</p>);
   };
 
   return (
@@ -51,7 +49,7 @@ const PokeDetails = ({ poke }) => {
             <h2>{capitalizedName}</h2>
           </div>
           <PokemonStats pokemon={poke} />
-          <div className="flavor"><h2>Pokédex Entries</h2>{flavorText(pokeInfo)}</div>
+          <div className="flavor"><h2>Pokédex Entries (Data's a bit jank)</h2>{flavorText(pokeInfo)}</div>
         </div>
       )}
     </div>
