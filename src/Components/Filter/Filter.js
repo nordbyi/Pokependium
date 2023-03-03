@@ -13,7 +13,7 @@ const Filter = ({ passFilter }) => {
       <input
         className="input"
         name="filterInput"
-        placeholder="Filter Pokemon by Name"
+        placeholder="Filter Pokemon By Name"
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
       ></input>
