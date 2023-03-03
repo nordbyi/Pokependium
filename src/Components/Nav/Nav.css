@@ -1,0 +1,44 @@
+.nav {
+  background-color: deepskyblue;
+  font-size: 1.4em;
+  border-radius: 0 0 20px 20px;
+}
+
+.types {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.type {
+  width: 10%;
+  color: aliceblue;
+  border-bottom: 5px solid transparent;
+  transition: .6s;
+}
+
+.type:hover {
+  border-bottom: 5px solid aliceblue;
+}
+
+a {
+  text-decoration: none;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  margin-top: .25vh;
+  margin-bottom: .25vh;
+  transition: 0.7s;
+  font-family: sans-serif;
+}
+
+a.active {
+  border-radius: 10px;
+  color: deepskyblue;
+  background-color: aliceblue;
+  transition: 0.7s;
+}
