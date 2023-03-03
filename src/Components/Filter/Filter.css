@@ -1,14 +1,25 @@
 .input {
   height: 5vh;
   width: 20vw;
-  font-size: 100%;
+  font-size: 25px;
   margin: 1vh;
-  padding: 10px;
+  padding: 15px;
   color: deepskyblue;
   border: 3px solid deepskyblue;
   background-color: aliceblue;
   border-radius: 15px;
   transition: 0.6s 
+}
+
+
+
+.input:focus::placeholder {
+  color: aliceblue;
+  /* transition: .6s; */
+}
+
+.input:hover {
+  width: 22vw;
 }
 
 .input:focus{
