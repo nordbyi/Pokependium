@@ -3,10 +3,37 @@
   width: 20vw;
   font-size: 100%;
   margin: 1vh;
+  padding: 10px;
+  color: deepskyblue;
+  border: 3px solid deepskyblue;
+  background-color: aliceblue;
+  border-radius: 15px;
+  transition: 0.6s 
+}
+
+.input:focus{
+  color:aliceblue;
+  background-color: deepskyblue;
+  border: 3px solid aliceblue;
+  width: 30vw;
+  outline: deepskyblue;
+  border-radius: 35px;
 }
 
 .input-container {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+::placeholder {
+  color: deepskyblue;
+  opacity: 1; 
+}
+
+:-ms-input-placeholder { 
+  color: deepskyblue;
+}
+
+::-ms-input-placeholder {
+  color: deepskyblue;
 }
