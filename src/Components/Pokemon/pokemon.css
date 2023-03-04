@@ -13,3 +13,13 @@
   transform: scale(108%);
   transition: .4s;
 }
+
+@media (max-width: 1000px) {
+  .container{
+    width: 75vw;
+  }
+
+  .img {
+    width: 30vw;
+  }
+}
