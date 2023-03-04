@@ -5,6 +5,7 @@ import Pokemon from "../Pokemon/Pokemon";
 import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 import Nav from "../Nav/Nav";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import './App.css'
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
       {error && <p>{error}</p>}
       <Nav pokemon={allPokemon}/>
       <React.Fragment>
+        <ScrollToTop />
         <Route
           exact
           path="/"
