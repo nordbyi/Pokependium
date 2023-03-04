@@ -5,6 +5,7 @@ import Pokemon from "../Pokemon/Pokemon";
 import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 import Nav from "../Nav/Nav";
+import './App.css'
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
@@ -35,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="screen">
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
       <Nav pokemon={allPokemon}/>
@@ -45,10 +46,10 @@ function App() {
           path="/"
           render={() => {
             return (
-              <>
+              <div className="main">
                 <Filter passFilter={setFilterQuery} />
                 <Pokemon pokemon={filteredPokemon} />
-              </>
+              </div>
             );
           }}
         />
@@ -67,10 +68,10 @@ function App() {
               return types.every(type => typeNames.includes(type))
             });
             return (
-              <>
+              <div className="main">
                 <Filter passFilter={setFilterQuery} />
                 <Pokemon pokemon={matchingPokes} />
-              </>
+              </div>
             );
           }}
         />
