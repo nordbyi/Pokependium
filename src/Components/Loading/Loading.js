@@ -4,7 +4,7 @@ import title from '../../assets/loading-title.png'
 
 const Loading = () => {
   return (
-    <div>
+    <div className='loading-container'>
       <img className='spinner' src={spinner} alt='Circle of Pokemon spinning in a circle'/>
       <img className='title' src={title} alt='Pokependium title image'/>
     </div>
