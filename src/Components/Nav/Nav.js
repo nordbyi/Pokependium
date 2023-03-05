@@ -22,6 +22,7 @@ const Nav = ({ pokemon }) => {
       <div className="types">
         <NavLink className='type' exact to={'/'}>All</NavLink>
         {navLinks}
+        <NavLink className='type' exact to={'/aboot'}>About Me</NavLink>
       </div>
     </div>
   )

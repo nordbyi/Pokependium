@@ -5,6 +5,8 @@ import Pokemon from "../Pokemon/Pokemon";
 import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 import Nav from "../Nav/Nav";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import './App.css'
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
@@ -35,20 +37,21 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="screen">
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
       <Nav pokemon={allPokemon}/>
       <React.Fragment>
+        <ScrollToTop />
         <Route
           exact
           path="/"
           render={() => {
             return (
-              <>
+              <div className="main">
                 <Filter passFilter={setFilterQuery} />
                 <Pokemon pokemon={filteredPokemon} />
-              </>
+              </div>
             );
           }}
         />
@@ -67,10 +70,10 @@ function App() {
               return types.every(type => typeNames.includes(type))
             });
             return (
-              <>
+              <div className="main">
                 <Filter passFilter={setFilterQuery} />
                 <Pokemon pokemon={matchingPokes} />
-              </>
+              </div>
             );
           }}
         />

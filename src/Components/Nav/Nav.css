@@ -2,6 +2,9 @@
   background-color: deepskyblue;
   font-size: 1.4em;
   border-radius: 0 0 20px 20px;
+  position: sticky; 
+  top: 0; 
+  z-index: 1;
 }
 
 .types {
@@ -41,4 +44,17 @@ a.active {
   color: deepskyblue;
   background-color: aliceblue;
   transition: 0.7s;
+}
+
+@media (max-width: 1000px) {
+  .nav{
+    width: 25vw;
+    border-radius: 0 0 0 0;
+  }
+  .types{
+    flex-direction: column;
+  }
+  .type{
+    width: 80%;
+  }
 }
