@@ -1,0 +1,24 @@
+.loading-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.spinner{
+  position: absolute;
+  /* transition: 2s; */
+  animation: spin 10s linear infinite;
+}
+
+.title{
+
+}
+
+@keyframes spin {
+  0%{
+     transform: rotate(0deg);
+    }
+ 100%{
+     transform: rotate(360deg);
+    }
+ }

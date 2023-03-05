@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PokemonStats from "../PokeStats/Pokestats";
+import Loading from "../Loading/Loading";
 import { getPokeInfo } from "../../apiCalls";
 import "./PokeDetails.css";
 
@@ -42,7 +43,7 @@ const PokeDetails = ({ poke }) => {
 
   return (
     <div className="details">
-      {loading && <p>Loading...</p>}
+      {loading && <Loading />}
       {error && <p>{error}</p>}
       {!loading && (
         <div className="details-container">
