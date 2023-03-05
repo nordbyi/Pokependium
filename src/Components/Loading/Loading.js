@@ -1,6 +1,7 @@
 import React from "react";
 import spinner from '../../assets/loading-spinner.png'
 import title from '../../assets/loading-title.png'
+import './Loading.css'
 
 const Loading = () => {
   return (
