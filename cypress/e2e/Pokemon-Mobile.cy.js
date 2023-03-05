@@ -36,7 +36,7 @@ describe("Main Display", () => {
       fixture: "charmander",
     });
     cy.visit("http://localhost:3000/");
-    cy.viewport(1500, 900)
+    cy.viewport('iphone-x')
   });
 
   it("should display a nav bar", () => {
@@ -140,3 +140,4 @@ describe("Main Display", () => {
       );
   });
 });
+
