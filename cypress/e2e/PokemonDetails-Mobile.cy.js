@@ -36,8 +36,12 @@ describe("Pokemon Details Display", () => {
       fixture: "charmander",
     });
     cy.visit("http://localhost:3000/");
+    cy.intercept(`https://pokeapi.co/api/v2/pokemon-species/1/`, {
+      fixture: "bulbasaurFlavor",
+    });
+
     cy.get("#1").click();
-    cy.viewport('iphone-x')
+    cy.viewport("iphone-x");
   });
 
   it("should route to a pokemon's details on click", () => {
@@ -55,7 +59,7 @@ describe("Pokemon Details Display", () => {
 
   it("should display a pokemon's stats", () => {
     cy.get(".stats").scrollIntoView().should("be.visible");
-    cy.contains("Height: 2.30 feet").should('be.visible');
+    cy.contains("Height: 2.30 feet").should("be.visible");
     cy.contains("Weight: 15.21 pounds");
     cy.contains("hp: 45");
     cy.contains("attack: 49");
@@ -65,9 +69,9 @@ describe("Pokemon Details Display", () => {
     cy.contains("speed: 45");
   });
 
-  it('should display a pokemon\'s flavor text accross game appearances', () => {
+  it("should display a pokemon's flavor text accross game appearances", () => {
     cy.get(".flavor").scrollIntoView().should("be.visible");
-  })
+  });
 
   it("should display the nav bar", () => {
     cy.get(".types").should("be.visible");
