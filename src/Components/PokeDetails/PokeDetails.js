@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PokemonStats from "../PokeStats/Pokestats";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 import { getPokeInfo } from "../../apiCalls";
 import "./PokeDetails.css";
 
@@ -55,7 +56,7 @@ const PokeDetails = ({ poke }) => {
         <div className="flavor">
           {loading && <Loading />}
           {!loading && <h2>Pokédex Entries (Data's a bit jank)</h2>}
-          {error && <p>{error}</p>}
+          {error && <Error />}
           {!loading && flavorText(pokeInfo)}
         </div>
       </div>
