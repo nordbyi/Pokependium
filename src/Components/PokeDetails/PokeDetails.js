@@ -3,6 +3,7 @@ import PokemonStats from "../PokeStats/Pokestats";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
 import { getPokeInfo } from "../../apiCalls";
+import PropTypes from "prop-types";
 import "./PokeDetails.css";
 
 const PokeDetails = ({ poke }) => {
@@ -35,7 +36,7 @@ const PokeDetails = ({ poke }) => {
     return arr
       .filter((el) => el.language.name === "en")
       .map((el) => (
-        <p>
+        <p key={el.version.name}>
           <strong>{el.version.name.split("-").join(" ")}: </strong>
           {el.flavor_text.replaceAll("\n", "")}
         </p>
@@ -65,3 +66,7 @@ const PokeDetails = ({ poke }) => {
 };
 
 export default PokeDetails;
+
+PokeDetails.propTypes = {
+  poke: PropTypes.object
+}

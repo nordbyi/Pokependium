@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import './Filter.css'
+
 
 const Filter = ({ passFilter }) => {
   const [inputValue, setInputValue] = useState("");
@@ -23,3 +25,7 @@ const Filter = ({ passFilter }) => {
 };
 
 export default Filter;
+
+Filter.prototypes = {
+  passFilter: PropTypes.func.isRequired
+}

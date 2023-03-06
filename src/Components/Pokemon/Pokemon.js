@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import './pokemon.css'
 
 const Pokemon = ({ pokemon }) => {
@@ -18,3 +19,7 @@ const Pokemon = ({ pokemon }) => {
 };
 
 export default Pokemon;
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.array.isRequired
+}
