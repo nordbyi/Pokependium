@@ -6,6 +6,7 @@ import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 import Nav from "../Nav/Nav";
 import Loading from "../Loading/Loading";
+import AboutMe from "../AboutMe/AboutMe";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import "./App.css";
 
@@ -39,7 +40,11 @@ function App() {
 
   return (
     <div className="screen">
-      {loading && <Loading />}
+      {loading && (
+        <div className='loading-container'>
+          <Loading />
+        </div>
+      )}
       {error && <p>{error}</p>}
       {!loading && <Nav pokemon={allPokemon} />}
       {!loading && (
@@ -57,6 +62,7 @@ function App() {
               );
             }}
           />
+          <Route exact path="/info/aboutme" component={AboutMe} />
           <Route
             exact
             path="/:types"
