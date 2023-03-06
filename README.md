@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="![277F354E-8E76-4FB1-BFDE-E37DF869B88E](https://user-images.githubusercontent.com/82419988/223166267-ed8db831-587e-41d1-b3ec-9b646b882325.png)" width="375" height="375">
-
-
+![277F354E-8E76-4FB1-BFDE-E37DF869B88E](https://user-images.githubusercontent.com/82419988/223166267-ed8db831-587e-41d1-b3ec-9b646b882325.png)
 
   
 # Pokependium
