@@ -76,4 +76,10 @@ describe("Pokemon Details Display", () => {
   it("should display the nav bar", () => {
     cy.get(".types").should("be.visible");
   });
+
+  it('should display an error message on fail to load flavor text', () => {
+    cy.intercept('https://pokeapi.co/api/v2/pokemon-species/1/', {})
+    cy.visit("http://localhost:3000/grass+poison/1")
+    cy.contains("Failed to Fetch Pokemon Info")
+  })
 });
