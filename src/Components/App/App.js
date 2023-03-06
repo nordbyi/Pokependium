@@ -46,8 +46,8 @@ function App() {
         </div>
       )}
       {error && <p>{error}</p>}
-      {!loading && <Nav pokemon={allPokemon} />}
-      {!loading && (
+      {!loading && !error && <Nav pokemon={allPokemon} />}
+      {!loading && !error && (
         <React.Fragment>
           <ScrollToTop />
           <Route
