@@ -43,22 +43,22 @@ const PokeDetails = ({ poke }) => {
 
   return (
     <div className="details">
-      {error && <p>{error}</p>}
-        <div className="details-container">
-          <div className="img-name">
-            <img
-              className="details-img"
-              src={poke.sprites.other["official-artwork"]["front_default"]}
-            />
-            <h2>{capitalizedName}</h2>
-          </div>
-          <PokemonStats pokemon={poke} />
-          <div className="flavor">
-            {loading && <Loading/>}
-            {!loading && <h2>Pokédex Entries (Data's a bit jank)</h2>}
-            {!loading && flavorText(pokeInfo)}
-          </div>
+      <div className="details-container">
+        <div className="img-name">
+          <img
+            className="details-img"
+            src={poke.sprites.other["official-artwork"]["front_default"]}
+          />
+          <h2>{capitalizedName}</h2>
         </div>
+        <PokemonStats pokemon={poke} />
+        <div className="flavor">
+          {loading && <Loading />}
+          {!loading && <h2>Pokédex Entries (Data's a bit jank)</h2>}
+          {error && <p>{error}</p>}
+          {!loading && flavorText(pokeInfo)}
+        </div>
+      </div>
     </div>
   );
 };
