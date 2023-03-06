@@ -1,0 +1,42 @@
+.about-container{
+  /* border: 2px solid black; */
+  display: flex;
+  width: 100%;
+}
+
+.loading-spinner{
+  width: 50%;
+}
+
+.info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.created-by{
+  font-size: 2.7em;
+}
+
+.link-to-me{
+  font-size: 2em;
+}
+
+@media (max-width: 1000px) {
+  .about-container{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loading-spinner{
+    width: 100%;
+  }
+
+  .info{
+    width: 100%;
+  }
+}
