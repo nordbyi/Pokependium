@@ -6,6 +6,7 @@ import PokeDetails from "../PokeDetails/PokeDetails";
 import Filter from "../Filter/Filter";
 import Nav from "../Nav/Nav";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 import AboutMe from "../AboutMe/AboutMe";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import "./App.css";
@@ -45,7 +46,7 @@ function App() {
           <Loading />
         </div>
       )}
-      {error && <p>{error}</p>}
+      {error && <Error />}
       {!loading && !error && <Nav pokemon={allPokemon} />}
       {!loading && !error && (
         <React.Fragment>
