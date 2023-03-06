@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import './Nav.css'
 
 const Nav = ({ pokemon }) => {
@@ -29,3 +31,7 @@ const Nav = ({ pokemon }) => {
 };
 
 export default Nav;
+
+Nav.propTypes = {
+  pokemon: PropTypes.array.isRequired
+}

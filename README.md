@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="![277F354E-8E76-4FB1-BFDE-E37DF869B88E](https://user-images.githubusercontent.com/82419988/223143180-7e7b8c5e-3202-4d31-8804-9e683403bebc.png)" width="375" height="375">
+  
+# Pokependium
+  
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+  <p align="center">
+    <a href="https://github.com/nordbyi/Pokependium"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/nordbyi/Pokependium/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/nordbyi/Pokependium/issues">Request Feature</a>
+  </p>
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+[Abstract](#abstract) ~
+[Installation Instructions](#installation-instructions) ~
+[Deployed Link](#deployed-link) ~
+[Preview of App](#preview-of-app) ~
+[Technologies](#technologies) ~
+[Contributors](#contributors) ~
+[Sources](#sources)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
 
-### `npm run build`
+<div align="center">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Abstract:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pokependium is an application that allows a user to explore their favorite Pokemon!  On load users can see a display of Pokemon that are fetched from the PokeAPI. They can filter pokemon by name and click in the naviation to see all Pokemon of the selected type.  When a user clicks on any pokemon's image they are routed using React Router to a details page about that Pokemon.  The url updates to display a path to that Pokemon that includes all of its types and its ID.  Additionally, the navigation applies an active style to all of that pokemon's types.  On the Pokemon details page, a user is greeted with a larger image of that Pokemon, along with its basic stats and its Pokedex entries from across all the mainline Pokemon games it has appeared in (which is fetched on mount). 
 
-### `npm run eject`
+The app incorporates a responsive layout and will change its structure to fit both large and mobile displays. It was built using functional React Hooks, asynchronous JavaScript, controlled form pattern, React Router and propTypes. It uses End-To-End Testing using Cypress where fetch requests are stubbed with fixtures and sad paths are tested to ensure intended execution.  An animated loading spinner component and an error component are also conditionally rendered based on state. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I built this over 3 days as part of Turing School of Software and Design's 3rd quarter's final solo project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I hope you have fun exploring Pokependium!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ 
+  
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Installation Instructions:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the Repo from the [Repository](https://github.com/nordbyi/Pokependium)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/nordbyi/Pokependium.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Run npm start
+   ```sh
+   npm start
+   ```
+5. Use the Link that is given in the Terminal & Open in Browser
+   ```sh
+   Example: http://localhost:3000/
+   ```
 
-### Code Splitting
+---
+  
+## Deployed Link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Click here to view deployed app on Vercel](https://github.com/nordbyi/Pokependium)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-### Making a Progressive Web App
+ 
+ <!-- ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/113261334/221386610-b01bd089-a587-49bf-bd4d-c2ef6916606f.gif) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<div>
+  <img src="https://img.shields.io/badge/-react-333333?logo=react&style=for-the-badge" width="100" height="30"/>
+  <img src="https://img.shields.io/badge/-react%20router-f44250?logo=react%20router&logoColor=white&style=for-the-badge" width="140" height="30"/>
+  <img src="https://img.shields.io/badge/-cypress-007780?logo=cypress&logoColor=white&style=for-the-badge" width="100" height="30"/>
+  <img src="https://img.shields.io/badge/-CSS3-315780?logo=css3&style=for-the-badge" width="100" height="30"/>
+  <img src="https://img.shields.io/badge/-npm-c12127?logo=npm&logoColor=white&style=for-the-badge" width="80"  height="30"/>
+</div>
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors:
+
+[//]: <> (Who worked on this application? Link to their GitHubs.)
+
+<div>
+  <img src="https://img.shields.io/badge/-Ian%20Nordby-B2AC88" height="30" width="100">
+  <p><strong>Connect with:</strong></p>
+  <a href="https://www.linkedin.com/in/iannordby/"> 
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://github.com/nordbyi">
+    <img src="https://img.shields.io/badge/-github-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+  </a>
+  <a href="mailto: ian.c.nordby@gmail.com">
+    <img src="https://img.shields.io/badge/-gmail-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge">
+  </a>
+
+---

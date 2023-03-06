@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PokemonStats from "../PokeStats/Pokestats";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 import { getPokeInfo } from "../../apiCalls";
+import PropTypes from "prop-types";
 import "./PokeDetails.css";
 
 const PokeDetails = ({ poke }) => {
@@ -34,7 +36,7 @@ const PokeDetails = ({ poke }) => {
     return arr
       .filter((el) => el.language.name === "en")
       .map((el) => (
-        <p>
+        <p key={el.version.name}>
           <strong>{el.version.name.split("-").join(" ")}: </strong>
           {el.flavor_text.replaceAll("\n", "")}
         </p>
@@ -43,30 +45,28 @@ const PokeDetails = ({ poke }) => {
 
   return (
     <div className="details">
-      {loading && (
-        <div className="loading-container">
-          <Loading />
+      <div className="details-container">
+        <div className="img-name">
+          <img
+            className="details-img"
+            src={poke.sprites.other["official-artwork"]["front_default"]}
+          />
+          <h2>{capitalizedName}</h2>
         </div>
-      )}
-      {error && <p>{error}</p>}
-      {!loading && (
-        <div className="details-container">
-          <div className="img-name">
-            <img
-              className="details-img"
-              src={poke.sprites.other["official-artwork"]["front_default"]}
-            />
-            <h2>{capitalizedName}</h2>
-          </div>
-          <PokemonStats pokemon={poke} />
-          <div className="flavor">
-            <h2>Pokédex Entries (Data's a bit jank)</h2>
-            {flavorText(pokeInfo)}
-          </div>
+        <PokemonStats pokemon={poke} />
+        <div className="flavor">
+          {loading && <Loading />}
+          {!loading && <h2>Pokédex Entries (Data's a bit jank)</h2>}
+          {error && <Error />}
+          {!loading && flavorText(pokeInfo)}
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 export default PokeDetails;
+
+PokeDetails.propTypes = {
+  poke: PropTypes.object
+}

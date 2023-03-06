@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import './PokeStats.css'
 
 const PokemonStats = ({ pokemon }) => {
@@ -20,3 +21,7 @@ const PokemonStats = ({ pokemon }) => {
 };
 
 export default PokemonStats;
+
+PokemonStats.propTypes = {
+  pokemon: PropTypes.object.isRequired
+}
