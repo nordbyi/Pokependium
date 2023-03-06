@@ -43,13 +43,7 @@ const PokeDetails = ({ poke }) => {
 
   return (
     <div className="details">
-      {loading && (
-        <div className="loading-container">
-          <Loading />
-        </div>
-      )}
       {error && <p>{error}</p>}
-      {!loading && (
         <div className="details-container">
           <div className="img-name">
             <img
@@ -60,11 +54,11 @@ const PokeDetails = ({ poke }) => {
           </div>
           <PokemonStats pokemon={poke} />
           <div className="flavor">
-            <h2>Pokédex Entries (Data's a bit jank)</h2>
-            {flavorText(pokeInfo)}
+            {loading && <Loading/>}
+            {!loading && <h2>Pokédex Entries (Data's a bit jank)</h2>}
+            {!loading && flavorText(pokeInfo)}
           </div>
         </div>
-      )}
     </div>
   );
 };
