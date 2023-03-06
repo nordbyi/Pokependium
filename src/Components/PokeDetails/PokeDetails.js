@@ -43,7 +43,11 @@ const PokeDetails = ({ poke }) => {
 
   return (
     <div className="details">
-      {loading && <Loading />}
+      {loading && (
+        <div className="loading-container">
+          <Loading />
+        </div>
+      )}
       {error && <p>{error}</p>}
       {!loading && (
         <div className="details-container">
