@@ -143,6 +143,6 @@ describe("Main Display", () => {
   it('should display an error message if it fails to load the pokemon', () => {
     cy.intercept("GET", "http://pokeapi.co/api/v2/pokemon/?limit=251", {})
     cy.visit("http://localhost:3000/");
-    cy.contains('Failed to Fetch Pokemon')
+    cy.contains('Failed to Fetch Pokemon Info')
   })
 });
